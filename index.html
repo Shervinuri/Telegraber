@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TELEGRABER // PRO</title>
+    <title>TELEGRABER PRO</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Rajdhani:wght@500;700&display=swap');
 
         :root {
             --bg-deep: #050505;
             --bg-panel: #0f0f0f;
-            --primary: #2AABEE; /* Telegram Blue */
+            --primary: #2AABEE; 
             --accent: #0088cc;
-            --success-green: #00ff00; /* For the + button */
+            --success-green: #00ff00;
             --danger: #ff3333;
             --text-main: #e0e0e0;
             --text-dim: #666;
@@ -38,7 +38,7 @@
             font-size: 13px;
         }
 
-        /* --- BACKGROUND FX --- */
+    
         #bgCanvas {
             position: fixed;
             top: 0;
@@ -61,7 +61,7 @@
             z-index: -1;
         }
 
-        /* --- LAYOUT --- */
+        
         .main-interface {
             max-width: 800px;
             margin: 40px auto;
@@ -72,7 +72,7 @@
             gap: 30px;
         }
 
-        /* --- HEADER --- */
+        
         header {
             text-align: center;
             margin-bottom: 20px;
@@ -101,7 +101,7 @@
             background: linear-gradient(90deg, transparent, var(--primary), transparent);
         }
 
-        /* --- MODULES --- */
+        
         .module {
             background: var(--bg-panel);
             border: 1px solid var(--border);
@@ -125,7 +125,7 @@
             letter-spacing: 1px;
         }
 
-        /* --- INPUT AREA --- */
+        
         .input-wrapper {
             display: flex;
             gap: 0;
@@ -172,7 +172,7 @@
             box-shadow: 0 0 15px var(--success-green);
         }
 
-        /* --- CHIPS --- */
+        
         .target-list {
             display: flex;
             flex-wrap: wrap;
@@ -194,7 +194,7 @@
         .chip:hover { border-color: var(--primary); }
         .chip-x { color: var(--danger); cursor: pointer; font-weight: bold; }
 
-        /* --- CONTROLS --- */
+        
         .controls-grid {
             display: grid;
             grid-template-columns: 1fr auto;
@@ -332,7 +332,7 @@
             .btn-main { flex: 1; }
         }
 
-        /* Scrollbar */
+        
         ::-webkit-scrollbar { width: 5px; }
         ::-webkit-scrollbar-track { background: #000; }
         ::-webkit-scrollbar-thumb { background: #333; }
@@ -351,7 +351,7 @@
             <div class="brand-title">TELEGRABER</div>
         </header>
 
-        <!-- INPUT MODULE -->
+        
         <div class="module">
             <span class="guide-label">// INPUT_STREAM</span>
             <div class="input-wrapper">
@@ -361,7 +361,7 @@
             <div class="target-list" id="targetList"></div>
         </div>
 
-        <!-- CONTROLS MODULE -->
+        
         <div class="module">
             <span class="guide-label">// EXECUTION_PARAMS</span>
             <div class="controls-grid">
@@ -379,7 +379,7 @@
             </div>
         </div>
 
-        <!-- MONITOR MODULE -->
+        
         <div class="module">
             <span class="guide-label">// SYSTEM_OUTPUT</span>
             <div class="monitor-wrapper">
@@ -388,7 +388,7 @@
                     <div class="log-line c-dim">system ready...</div>
                 </div>
                 
-                <!-- RESULTS -->
+                
                 <div class="terminal-box" id="resBox">
                     <div style="display:flex; justify-content:space-between; margin-bottom:10px; padding-bottom:5px; border-bottom:1px solid #222;">
                         <span class="c-dim">CAPTURED: <b id="resCount" style="color:var(--text-main)">0</b></span>
@@ -410,7 +410,7 @@
     </footer>
 
     <script>
-        // --- VISUALS ---
+        
         const canvas = document.getElementById('bgCanvas');
         const ctx = canvas.getContext('2d');
         let particles = [];
@@ -448,7 +448,7 @@
         }
         initBg();
 
-        // --- LOGIC ---
+        
         const PROXIES = [
             'https://api.allorigins.win/raw?url=',
             'https://corsproxy.io/?',
@@ -474,7 +474,7 @@
             proxy: 0
         };
 
-        // --- DOM ACTIONS ---
+        
         function updateDepth(val) {
             document.getElementById('depthVal').innerText = (val < 10 ? '0' : '') + val + ' PAGES';
         }
@@ -512,7 +512,7 @@
             ).join('');
         }
 
-        // --- CORE PROCESS ---
+        
         async function fetchSrc(url) {
             const proxy = PROXIES[state.proxy];
             try {
@@ -530,13 +530,13 @@
 
         function parse(html) {
             let count = 0;
-            // 1. Regex direct
+            
             for(let key in REGEX) {
                 (html.match(REGEX[key]) || []).forEach(m => {
                     if(processItem(key, m)) count++;
                 });
             }
-            // 2. Base64
+            
             (html.match(/(eyJ[a-zA-Z0-9+/=]{20,})|([a-zA-Z0-9+/=]{100,})/g) || []).forEach(b => {
                 try {
                     const dec = atob(b);
@@ -610,7 +610,7 @@
 
         function stopProcess() { state.stop = true; log("Abort signal received.", 'err'); }
 
-        // --- UTILS ---
+        
         function copyOne(txt) {
             navigator.clipboard.writeText(txt);
             log("Item copied to clipboard", 'suc');
@@ -638,4 +638,28 @@
     </script>
 </body>
 </html>
-
+// ‍ ☬ SHΞЯVIN™
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⠉⠉⠉⠉⠉⠉⠉⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⡿⠟⠋⢀⣤⣾⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⠉⠀⠀⠚⠛⠛⠛⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣶⣶⣶⣶⣶⣶⣶⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣀⣀⣀⣀⣀⣀⣀⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⠀⠉⠛⠿⠿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣷⣶⣤⠤⠀⠉⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⠉⠉⢀⣀⣤⣶⣾⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⠒⠛⠛⠛⠛⠛⠛⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⠀⣶⣶⠀⢰⣶⣶⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⡀⠙⠋⢀⡀⠈⠛⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⠿⣶⡶⠿⣿⣿⠶⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⠀⣿⡇⠀⣿⣿⠀⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⠀⣿⣇⣀⣿⣿⠀⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⠛⠛⠛⠛⠛⠛⠛⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣶⣶⣶⠀⣶⣶⣶⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⠿⠿⠿⠀⠿⠿⠿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣤⣤⣤⣤⣤⣤⣤⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⠋⢀⣿⠋⢀⡀⠙⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣇⠀⢿⡏⢀⣾⡿⠀⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣤⣀⣀⣼⣇⣀⣰⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+☬Exclusive SHΞN™ made
